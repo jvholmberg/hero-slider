@@ -94,9 +94,9 @@ $(document).ready(function () {
         },
         interaction: function () {
             if(xHero.slideInFomSide)
-                xHero.$container.on('mouseenter', xHero.pause).on('mouseleave touchend', xHero.start);
+                xHero.$container.on('mouseenter touchstart', xHero.pause).on('mouseleave touchend', xHero.start);
             else
-                xHero.$overlay.on('mouseenter', xHero.pause).on('mouseleave touchend', xHero.start);
+                xHero.$overlay.on('mouseenter touchstart', xHero.pause).on('mouseleave touchend', xHero.start);
             xHero.$radio.on('click', function () {
                 xHero.current = this.value;
                 xHero.swap(null);
