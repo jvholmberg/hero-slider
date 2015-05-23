@@ -1,0 +1,57 @@
+body, .hero-slider,
+.hero-slides, .hero-slide
+.hero-overlay label,
+.hero-overlay input{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body, html {
+    height: 100%;
+}
+.hero-slider {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.hero-slides {
+    display: block;
+    list-style: none;
+    height: 100%;
+}
+.hero-slide {
+    display: block;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: #fff;
+}
+.hero-overlay {
+    position: absolute;
+    overflow: hidden;
+    padding: 10px 0;
+    height: 30px;
+    width: 100%;
+    z-index: 50;
+    text-align: center;
+}
+.hero-overlay input {
+    display: none;
+}
+.hero-overlay label {
+    display: inline-block;
+    margin: 0 3px;
+    height: 10px;
+    width: 20px;
+    cursor: pointer;
+    background-color: #fff;
+}
+.hero-overlay label:hover {
+    background-color: #c2c2c2;
+}
+.hero-overlay input:checked + label {
+    background-color: #a9a9a9;
+}
