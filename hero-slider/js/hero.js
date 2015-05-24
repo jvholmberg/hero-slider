@@ -81,7 +81,7 @@ $(document).ready(function () {
                 'position': xHero.slideInFomSide ? 'relative' : 'absolute',
                 'float': xHero.slideInFomSide ? 'left' : 'none',
                 'min-height': xHero.minHeight,
-                'height': 100 + '%',
+                'height': xHero.slideInFomSide ? 100 + '%' : xHero.height + '%',
                 'width': xHero.slideInFomSide ? 100 / (xHero.files.length + 1) + '%' : xHero.width + '%'
             });
             $.each(xHero.files, function(index, image) {
