@@ -1,50 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head lang='en'>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width'>
+    <title>Portfolio - Johan Holmberg</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='src/css/style.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-    <div class="hero-slider">
-        <ul class="hero-slides">
-            <li class="hero-slide hero-slide-0">0</li>
-            <li class="hero-slide hero-slide-1">1</li>
-            <li class="hero-slide hero-slide-2">2</li>
-            <li class="hero-slide hero-slide-0 last-hero">0</li>
+    <div class='hero-slider'>
+        <ul class='hero-slides'>
+            <li class='hero-slide hero-slide-0'>
+                <h3>Johan Holmberg</h3>
+                <p>Thinker // Dreamer // Studious</p>
+            </li>
+            <li class='hero-slide hero-slide-1'>
+                <h3>Johan Holmberg</h3>
+                <p>Thinker // Dreamer // Studious</p>
+            </li>
+            <li class='hero-slide hero-slide-2'>
+                <h3>Johan Holmberg</h3>
+                <p>Thinker // Dreamer // Studious</p>
+            </li>
+            <li class='hero-slide hero-slide-0 last-hero'>
+                <h3>Johan Holmberg</h3>
+                <p>Thinker // Dreamer // Studious</p>
+            </li>
         </ul>
     </div>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <p>hej</p>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="hero-slider/js/hero.js"></script>
+    <div class="about-section section">
+        <p class="new-feature">in Progress</p>
+        <div class="about-me">
+            <h3 class="section-title">About myself</h3>
+            <img src="src/img/me.jpg" alt="Picture of me, Johan Holmberg" />
+            <p>
+                After studying at the local gymnasium here in Älmhult and then directly after, 3 years at
+                Linnéuniversitetet in Kalmar my time has finally come to be a part of tomorrows web.
+                My studies in Kalmar has given me the neccesary tools to perform in a Frontend- aswell as an
+                Backend-environment. My primary focus tho lies on the Frontend-part where im constantly hacking code
+                to find better/cleaner/faster solutions to given problems. As a person im driven, creative
+                and studious. At the moment im located in Älmhult which may not be the optimal geological
+                position. However if the right opportunity is given I'm prepared to move since I', longing for
+                a more active, lively city.
+
+            </p>
+        </div>
+        <div class="my-skills">
+            <div class="skill-lockup">
+                <div class="skill-label">Communication</div>
+                <div class="skill-units skill-3"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="skill-lockup">
+                <div class="skill-label">Learning</div>
+                <div class="skill-units skill-4"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="skill-lockup">
+                <div class="skill-label">Planning</div>
+                <div class="skill-units skill-2"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="skill-lockup">
+                <div class="skill-label">UX Design</div>
+                <div class="skill-units skill-3"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="skill-lockup">
+                <div class="skill-label">Organization</div>
+                <div class="skill-units skill-3"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="skill-lockup">
+                <div class="skill-label">Teaching</div>
+                <div class="skill-units skill-2"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="skill-lockup">
+                <div class="skill-label">Visual Design</div>
+                <div class="skill-units skill-3"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="skill-lockup">
+                <div class="skill-label">Programming</div>
+                <div class="skill-units skill-3"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-section section">
+        <p class="new-feature">in Progress</p>
+        <form action="MAILTO:johan.holmberg123@hotmail.com" method="post" enctype="text/plain">
+            <input id="form-email" name="email" type="email" placeholder="Email" />
+            <input id="form-topic" name="topic" type="text" placeholder="Topic" />
+            <textarea id="form-message" name="text" placeholder="Message"></textarea>
+            <input id="form-submit" type="submit" value="Contact me">
+        </form>
+    </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='src/js/lib/hero-slider/js/hero.js'></script>
 </body>
 </html>

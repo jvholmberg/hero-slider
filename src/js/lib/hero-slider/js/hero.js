@@ -8,14 +8,15 @@ $(document).ready(function () {
     *                                                     *
     ******************************************************/
 
-        sleepTimer: 4000,
-        animationSpeed: 1000,
+        sleepTimer: 8000,
+        animationSpeed: 1500,
+        contentHeight: 129,
         minHeight: 0,
         height: 100,
         width: 100,
-        path: 'hero-slider/',
-        filePath: 'hero-slider/assets/',
-        files: ['hero1', 'hero2', 'hero3'],
+        path: 'src/js/lib/hero-slider/',
+        filePath: 'src/js/lib/hero-slider/assets/',
+        files: ['hero-road', 'hero-lake', 'hero-field'],
         fileType: '.jpg',
         slideInFomSide: false,
 
@@ -25,6 +26,7 @@ $(document).ready(function () {
     *                                                     *
     ******************************************************/
 
+        $window: $(window),
         $container: $('.hero-slider'),
         $list: $('.hero-slides'),
         $elements: $('.hero-slide'),
@@ -70,6 +72,7 @@ $(document).ready(function () {
         },
         setup: function () {
             xHero.interaction();
+            xHero.onResize();
             xHero.$container.css({
                 'min-height': xHero.minHeight,
                 'height': xHero.height + '%',
@@ -92,6 +95,9 @@ $(document).ready(function () {
             });
             xHero.$list.find('.last-hero').css('z-index', 0);
         },
+        onResize: function() {
+            $('.hero-slide > h3').css('margin-top', (xHero.$window.height() / 2) - xHero.contentHeight / 2);
+        },
         interaction: function () {
             if(xHero.slideInFomSide)
                 xHero.$container.on('mouseenter touchstart', xHero.pause).on('mouseleave touchend', xHero.start);
@@ -100,6 +106,9 @@ $(document).ready(function () {
             xHero.$radio.on('click', function () {
                 xHero.current = this.value;
                 xHero.swap(null);
+            });
+            xHero.$window.on('resize', function () {
+                xHero.onResize();
             });
         },
         start: function () {

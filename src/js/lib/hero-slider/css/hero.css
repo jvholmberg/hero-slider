@@ -28,6 +28,7 @@ body, html {
     background-position: center;
     background-size: cover;
     background-color: #fff;
+    text-align: center;
 }
 .hero-overlay {
     position: absolute;
