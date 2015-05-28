@@ -1,4 +1,4 @@
-h1, h3, p, input, textarea, div {
+h1, h3, p, a, input, textarea, div {
     font-family: 'Open Sans', sans-serif;
 }
 .new-feature {
@@ -28,6 +28,7 @@ h1, h3, p, input, textarea, div {
     padding: 60px 0 10px;
     color: #c2c2c2;
     text-transform: uppercase;
+    text-align: center;
 }
 .section {
     margin: 0 auto;
@@ -44,7 +45,7 @@ h1, h3, p, input, textarea, div {
     border-radius: 50%;
 }
 .my-skills {
-    margin: 50px auto 0;
+    margin: 80px auto;
     overflow: hidden;
 }
 .skill-lockup {
@@ -73,6 +74,39 @@ h1, h3, p, input, textarea, div {
 .skill-lockup .skill-5 span:nth-child(-n+5) {
     border: 2px solid #FE9A2E;
 }
+/* MY-WORK ************************************************************************************************************/
+.work-section {
+    padding: 0 0 50px;
+    text-align: center;
+    background-color: #636363;
+}
+.work-section a {
+    font-size: 3em;
+    text-decoration: none;
+    color: #FE9A2E;
+}
+.work-section a:hover {
+    color: #c2c2c2;
+}
+
+
+/* INSTAGRAM **********************************************************************************************************/
+.instagram-section {
+    margin: 50px auto 0;
+    max-width: 780px;
+    width: 100%;
+    overflow: hidden;
+}
+.instagram-image {
+
+}
+.instagram-image img {
+    float: left;
+    display: block;
+    height: auto;
+    width: 25%;
+}
+
 /* CONTACT ************************************************************************************************************/
 .contact-section {
     margin-top: 50px;
@@ -112,13 +146,21 @@ h1, h3, p, input, textarea, div {
     color: #fff;
     border: none;
 }
+/* Experience *********************************************************************************************************/
+.experience-section {
+}
+.experience-title, .experience-subtitle, .experience-description {
+    margin: 0 auto;
+    max-width: 680px;
+    width: 100%;
+    display: block;
+}
 
 
 
 
 
-
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 680px) {
     .hero-slide h3 {
         font-size: 1.5em;
         border: 4px solid #fff;
@@ -138,5 +180,11 @@ h1, h3, p, input, textarea, div {
     }
     .skill-units {
         padding-top: 4px;
+    }
+    .instagram-image img {
+        float: left;
+        display: block;
+        height: auto;
+        width: 33%;
     }
 }
