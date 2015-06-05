@@ -2,30 +2,63 @@ $(document).ready(function () {
 
     var xHero = {
 
-    /******************************************************
-    *                                                     *
-    *                    CONFIGURATION                    *
-    *                                                     *
-    ******************************************************/
+        /******************************************************
+         *                                                     *
+         *                    CONFIGURATION                    *
+         *                                                     *
+         ******************************************************/
 
+        /*
+         * To integrate this in a framework just remove
+         * encapsulating anonymous function .ready() and
+         * xHero.init() at bottom of script and instead
+         * call it from your main file.
+         * */
+
+
+        /*
+         * Configuration options for slider behavior
+         * */
         sleepTimer: 4000,
         animationSpeed: 1500,
         contentHeight: 129,
         minHeight: 0,
         height: 100,
         width: 100,
+        /*
+         * Path to hero-slider lib
+         * */
         path: 'src/js/lib/hero-slider/',
+        /*
+         * Path to image-catalogue         *
+         * */
         filePath: 'src/js/lib/hero-slider/assets/',
+        /*
+         * Put image-names in array in the order to be displayed in
+         * */
         files: ['hero-road', 'hero-lake', 'hero-field'],
+        /*
+         * Specify file-type on images (all images must be of the same type)
+         * */
         fileType: '.jpg',
+        /*
+         * true: images slides in from the side
+         * false: images fade in from behind
+         * */
         slideInFomSide: true,
+        /*
+         * true: pause on hover with whole slider
+         * false: pause on hover with controlbar
+         * */
+        pauseOption: false,
 
-    /******************************************************
-    *                                                     *
-    *                      FUNCTIONS                      *
-    *                                                     *
-    ******************************************************/
+        /******************************************************
+         *                                                     *
+         *                      FUNCTIONS                      *
+         *                                                     *
+         ******************************************************/
 
+        // Variables used which are not to be altered
         $window: $(window),
         $container: $('.hero-slider'),
         $list: $('.hero-slides'),
@@ -36,13 +69,14 @@ $(document).ready(function () {
         current: 0,
         previous: 0,
 
+        // Creating and appending dynamic DOM-elements
         init: function () {
             var $css =
-                $('<link />', {
-                    rel: 'stylesheet',
-                    type: 'text/css',
-                    href: xHero.path + 'css/hero.css'
-                }),
+                    $('<link />', {
+                        rel: 'stylesheet',
+                        type: 'text/css',
+                        href: xHero.path + 'css/hero.css'
+                    }),
                 $label,
                 $radio,
                 $overlay;
@@ -55,24 +89,28 @@ $(document).ready(function () {
                 $label = $('<label />', {
                     for: 'hero-button-' + i
                 }),
-                $radio = $('<input />', {
-                    id: 'hero-button-' + i,
-                    name: 'hero-radio',
-                    type: 'radio',
-                    value: i,
-                    checked: (i == 0) ? true : false
-                });
+                    $radio = $('<input />', {
+                        id: 'hero-button-' + i,
+                        name: 'hero-radio',
+                        type: 'radio',
+                        value: i,
+                        checked: (i == 0) ? true : false
+                    });
                 $overlay.append($radio).append($label);
                 $('.hero-overlay label').unbind('click');
             }
             xHero.$overlay = $($overlay);
             xHero.$radio = $(xHero.$overlay.find('input'));
+            // Setting up correct behavior depending on animationType
             xHero.setup();
+            // Starting slider by calling .start() function.
             xHero.start();
         },
         setup: function () {
+            // Setting up listeners for user interactions
             xHero.interaction();
             xHero.onResize();
+            // Creating behavior for slides and appending images
             xHero.$container.css({
                 'min-height': xHero.minHeight,
                 'height': xHero.height + '%',
@@ -97,11 +135,14 @@ $(document).ready(function () {
             xHero.$list.find('.hero-slide:first-child').css('display', 'block');
             xHero.$list.find('.last-hero').css('z-index', 0);
         },
+        // Running on window resize
         onResize: function() {
             $('.hero-slide > h3').css('margin-top', (xHero.$window.height() / 2) - xHero.contentHeight / 2);
         },
+        // function containing all user-interactions
         interaction: function () {
-            if(xHero.slideInFomSide)
+            // If pauseOption = true, pause slider when hovering over slider else only when over controls
+            if(xHero.pauseOption)
                 xHero.$container.on('mouseenter touchstart', xHero.pause).on('mouseleave touchend', xHero.start);
             else
                 xHero.$overlay.on('mouseenter touchstart', xHero.pause).on('mouseleave touchend', xHero.start);
@@ -136,6 +177,7 @@ $(document).ready(function () {
                     xHero.$overlay.find('#hero-button-' + xHero.current).prop('checked', true);
                 });
             } else {
+                // If at last slide set current to first and then swap
                 if(xHero.current == xHero.files.length) {
                     xHero.current = 0;
                 }
